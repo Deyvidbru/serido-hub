@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - SeridóHub</title>
+  <link rel="icon" type="image/svg" href="assets/logo-serido-hub.svg">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <div class="container py-4">
+      <div class="row g-4 align-items-center">
+        <div class="col-12 col-md-6">
+          <div class="card login-card bg-warning text-dark border-0 rounded-4 shadow-lg">
+            <div class="card-body p-4">
+              <div id="step-email">
+                <h1 class="h4 fw-bold mb-2">Faça login ou crie uma conta</h1>
+                <label for="email" class="form-label fw-semibold mb-1">
+                  Insira o seu endereço de e-mail
+                </label>
+
+                <form id="email-form" novalidate>
+                  <input
+                    type="text"
+                    inputmode="email"
+                    autocomplete="username"
+                    id="email"
+                    class="form-control mb-2"
+                    placeholder="seuemail@exemplo.com"
+                    required
+                  />
+                  <div id="email-error" class="text-danger small mb-1"></div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100 rounded-pill mt-2"
+                  >
+                    Continuar
+                  </button>
+                </form>
+
+                <hr class="my-3" />
+
+                <p class="small text-center mb-2">Novo por aqui?</p>
+                <a
+                  href="cadastro.html"
+                  class="btn btn-outline-primary w-100 rounded-pill btn-sm"
+                >
+                  Criar sua conta no SeridóHub
+                </a>
+              </div>
+
+              <div id="step-password" class="d-none">
+                <h1 class="h4 fw-bold mb-2">Fazer login</h1>
+                <p class="mb-1">
+                  Entrar como
+                  <span id="display-email" class="fw-semibold"></span>
+                </p>
+                <a
+                  href="#"
+                  id="change-email"
+                  class="small text-decoration-none text-dark mb-2 d-inline-block"
+                >
+                  Usar outro e-mail
+                </a>
+
+                <form id="password-form">
+                  <label for="password" class="form-label fw-semibold mb-1">
+                    Insira sua senha
+                  </label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control mb-2"
+                    placeholder="Senha"
+                    required
+                    autocomplete="current-password"
+                  />
+                  <div id="password-error" class="text-danger small mb-1"></div>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary w-100 rounded-pill mt-2"
+                  >
+                    Login
+                  </button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 text-center">
+          <div class="promo-logo">
+            <img
+              src="assets/icon.svg"
+              alt="Logo SeridóHub"
+            />
+          </div>
+          <p class="fw-semibold mb-0">
+            Aqui você encontra o melhor desconto do
+          </p>
+          <p class="fw-semibold text-warning fs-5 mb-0">Seridó</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>

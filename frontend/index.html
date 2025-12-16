@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - SeridóHub</title>
+  <link rel="icon" type="image/svg" href="assets/logo-serido-hub.svg">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+  />
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main>
+    <div class="container-fluid py-3">
+      <div class="home-wrapper">
+        <div class="hero-card mb-4 p-4 p-md-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-md-8">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <span
+                  class="badge rounded-pill text-white badge-usuario bg-dark"
+                  id="badge-tipo-usuario"
+                >
+                  Visitante
+                </span>
+              </div>
+
+              <h1 class="hero-title mb-2">
+                Olá, <span class="usuario-nome">visitante</span>
+              </h1>
+
+              <p class="hero-subtitle mb-0" id="hero-subtitle">
+                Explore as lojas e descubra o SeridóHub. Faça login ou crie uma conta para aproveitar tudo.
+              </p>
+            </div>
+
+            <div class="col-12 col-md-4 text-md-end">
+              <button id="btn-login" class="btn btn-primary btn-sm rounded-pill me-2">
+                Entrar
+              </button>
+              <button id="btn-cadastro" class="btn btn-outline-dark btn-sm rounded-pill me-2">
+                Criar conta
+              </button>
+              <button id="btn-logout" class="btn btn-outline-dark btn-sm rounded-pill d-none">
+                Sair
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <section id="catalogo-home">
+          <div class="section-header mb-3">
+            <h2 class="section-title mb-0">Catálogo</h2>
+            <small id="catalogo-subtitle">
+              Veja lojas e produtos disponíveis agora.
+            </small>
+          </div>
+
+          <div id="catalog-status" class="text-muted small mb-3"></div>
+
+          <div class="mb-2">
+            <h3 class="section-title mb-1">Lojas</h3>
+          </div>
+
+          <div id="lojas-loading" class="text-muted small mb-2">
+            Carregando lojas...
+          </div>
+
+          <div id="lojas-empty" class="alert alert-light border d-none">
+            Nenhuma loja encontrada ainda.
+          </div>
+
+          <div id="lojas-error" class="alert alert-danger d-none">
+            Não foi possível carregar as lojas. Tente novamente mais tarde.
+          </div>
+
+          <div class="row g-3 mb-4" id="lojas-grid"></div>
+
+          <div class="mb-2">
+            <h3 class="section-title mb-1">Produtos</h3>
+          </div>
+
+          <div id="produtos-loading" class="text-muted small mb-2">
+            Carregando produtos...
+          </div>
+
+          <div id="produtos-empty" class="alert alert-light border d-none">
+            Nenhum produto cadastrado ainda.
+          </div>
+
+          <div id="produtos-error" class="alert alert-danger d-none">
+            Não foi possível carregar os produtos. Tente novamente mais tarde.
+          </div>
+
+          <div class="row g-3" id="produtos-grid"></div>
+        </section>
+
+        <section id="vendedor-home" class="d-none">
+          <div class="section-header mb-3">
+            <h2 class="section-title mb-0">Painel do vendedor</h2>
+            <small>Atalhos rápidos para gerenciar sua loja, produtos e pedidos.</small>
+          </div>
+
+          <div id="vendedor-sem-loja" class="vendedor-estado d-none">
+            <div class="card vendedor-highlight-card mb-4">
+              <div class="card-body d-flex flex-column flex-md-row align-items-md-center gap-3">
+                <div class="flex-grow-1">
+                  <span class="badge rounded-pill bg-warning text-dark mb-2">
+                    Comece a vender
+                  </span>
+                  <h3 class="mb-2">Cadastre sua primeira loja no SeridóHub</h3>
+                  <p class="small-muted mb-3">
+                    Crie o perfil da sua loja, adicione seus produtos e comece a receber pedidos dos clientes da região.
+                  </p>
+                  <button
+                    id="btn-dashboard-cadastrar-loja"
+                    class="btn btn-primary rounded-pill"
+                    type="button"
+                  >
+                    <i class="bi bi-shop me-1"></i>
+                    Cadastrar minha loja
+                  </button>
+                </div>
+                <div class="text-center text-md-end d-none d-md-block">
+                  <img
+                    src="assets/icon.svg"
+                    alt="Loja SeridóHub"
+                    class="vendedor-highlight-icon"
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="vendedor-com-loja" class="vendedor-estado d-none">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card card-dashboard h-100">
+                  <div class="card-body">
+                    <div class="dashboard-icon-circle bg-primary bg-opacity-10 mb-2">
+                      <i class="bi bi-shop text-primary"></i>
+                    </div>
+                    <h3 class="dashboard-card-title mb-1">Minha loja</h3>
+                    <p class="small-muted mb-2">
+                      Veja e gerencie a loja cadastrada no SeridóHub.
+                    </p>
+                    <button
+                      id="btn-dashboard-minhas-lojas"
+                      class="btn btn-primary btn-sm w-100 rounded-pill"
+                      type="button"
+                    >
+                      Abrir minha loja
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card card-dashboard h-100">
+                  <div class="card-body">
+                    <div class="dashboard-icon-circle bg-success bg-opacity-10 mb-2">
+                      <i class="bi bi-box-seam text-success"></i>
+                    </div>
+                    <h3 class="dashboard-card-title mb-1">Produtos</h3>
+                    <p class="small-muted mb-2">
+                      Cadastre novos itens ou gerencie produtos existentes.
+                    </p>
+                    <button
+                      id="btn-dashboard-produtos-unificado"
+                      class="btn btn-success btn-sm w-100 rounded-pill text-white"
+                      type="button"
+                    >
+                      Gerenciar produtos
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-6 col-lg-3">
+                <div class="card card-dashboard h-100">
+                  <div class="card-body">
+                    <div class="dashboard-icon-circle bg-warning bg-opacity-10 mb-2">
+                      <i class="bi bi-receipt-cutoff text-warning"></i>
+                    </div>
+                    <h3 class="dashboard-card-title mb-1">Pedidos recebidos</h3>
+                    <p class="small-muted mb-2">
+                      Acompanhe os pedidos em tempo real e atualize o status.
+                    </p>
+                    <button
+                      id="btn-dashboard-pedidos"
+                      class="btn btn-warning btn-sm w-100 rounded-pill"
+                      type="button"
+                    >
+                      Ver pedidos
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/carrinho.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

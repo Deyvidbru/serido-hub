@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Minha Loja - SeridóHub</title>
+  <link rel="icon" type="image/svg" href="assets/logo-serido-hub.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"/>
+
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="page-wrapper py-4 store-page">
+    <div class="container">
+      <div class="minha-loja-header d-flex justify-content-between align-items-center mb-3">
+        <h1 class="h5 mb-0">Minha loja</h1>
+        <a href="index.html" class="small text-decoration-none">
+          <i class="bi bi-arrow-left"></i> Voltar para a Home
+        </a>
+      </div>
+
+      <div id="loja-alert"></div>
+
+      <section id="bloco-form-loja" class="row g-4">
+        <div class="col-12 col-xl-8">
+          <div class="card shadow-sm store-form-card">
+            <div class="card-body">
+              <div class="store-form-header">
+                <h2 id="titulo-form-loja" class="h6 mb-0">Cadastrar loja</h2>
+              </div>
+
+              <small id="descricao-form-loja" class="text-muted d-block mb-3">
+                Cadastre ou atualize as informações da sua loja. As mudanças serão refletidas para os clientes.
+              </small>
+
+              <form id="loja-form" novalidate>
+                <input type="hidden" id="loja-id" />
+
+                <div class="mb-2">
+                  <label class="form-label small">Nome da loja</label>
+                  <input
+                    id="loja-nome"
+                    type="text"
+                    class="form-control form-control-sm"
+                    placeholder="Ex: Mercadinho São João"
+                    required
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <label class="form-label small">Descrição</label>
+                  <textarea
+                    id="loja-descricao"
+                    class="form-control form-control-sm"
+                    rows="3"
+                    placeholder="Descreva sua loja em poucas palavras..."
+                  ></textarea>
+                </div>
+
+                <div class="mb-2">
+                  <label class="form-label small">Endereço da loja</label>
+                  <input
+                    id="loja-endereco"
+                    type="text"
+                    class="form-control form-control-sm"
+                    placeholder="Rua Exemplo, 123 — Bairro"
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <label class="form-label small">Telefone da loja</label>
+                  <input
+                    id="loja-telefone"
+                    type="text"
+                    class="form-control form-control-sm"
+                    placeholder="(84) 99999-9999"
+                  />
+                </div>
+
+                <div class="mb-2">
+                  <label class="form-label small">Logo da loja (URL)</label>
+                  <input
+                    id="loja-imagem-logo"
+                    type="url"
+                    class="form-control form-control-sm"
+                    placeholder="https://exemplo.com/logo.png"
+                  />
+                  <small class="text-muted">
+                    Utilize uma URL de imagem válida. A logo será exibida para os clientes no catálogo.
+                  </small>
+
+                  <div class="store-logo-preview mt-2">
+                    <div class="store-logo-preview-box">
+                      <img
+                        id="loja-logo-preview-img"
+                        src=""
+                        alt="Pré-visualização da logo da loja"
+                        class="store-logo-preview-img d-none"
+                      />
+                      <div
+                        id="loja-logo-preview-placeholder"
+                        class="store-logo-preview-placeholder"
+                      >
+                        <i class="bi bi-image"></i>
+                        <span>Pré-visualização da logo</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row g-2 mb-3">
+                  <div class="col-6">
+                    <label class="form-label small">Abertura</label>
+                    <input
+                      id="loja-horario-abertura"
+                      type="time"
+                      class="form-control form-control-sm"
+                    />
+                  </div>
+
+                  <div class="col-6">
+                    <label class="form-label small">Fechamento</label>
+                    <input
+                      id="loja-horario-fechamento"
+                      type="time"
+                      class="form-control form-control-sm"
+                    />
+                  </div>
+                </div>
+
+                <div id="loja-error" class="text-danger small mb-2"></div>
+                <div id="loja-success" class="text-success small mb-2"></div>
+
+                <button type="submit" class="btn btn-primary rounded-pill px-4">
+                  <span id="texto-botao-form">Salvar loja</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-xl-4">
+          <div class="card shadow-sm store-tips-card mb-3">
+            <div class="card-body">
+              <span class="badge rounded-pill mb-2">Ajuda rápida</span>
+              <h2 class="h6 mb-2">Dicas para o cadastro</h2>
+              <ul class="small mb-0">
+                <li>Use um nome claro e fácil de reconhecer.</li>
+                <li>Adicione uma boa descrição da loja.</li>
+                <li>Escolha uma logo chamativa para o catálogo.</li>
+                <li>Informe horários de funcionamento confiáveis.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/config.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/minha_loja.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const urlInput = document.getElementById("loja-imagem-logo");
+      const img = document.getElementById("loja-logo-preview-img");
+      const placeholder = document.getElementById("loja-logo-preview-placeholder");
+
+      if (!urlInput || !img || !placeholder) return;
+
+      const clearPreview = () => {
+        img.src = "";
+        img.classList.add("d-none");
+        placeholder.classList.remove("d-none");
+      };
+
+      const updatePreview = () => {
+        const url = (urlInput.value || "").trim();
+        if (!url) {
+          clearPreview();
+          return;
+        }
+        img.src = url;
+      };
+
+      urlInput.addEventListener("blur", updatePreview);
+      urlInput.addEventListener("change", updatePreview);
+      urlInput.addEventListener("input", function () {
+        if (!this.value.trim()) {
+          clearPreview();
+        }
+      });
+
+      img.addEventListener("error", clearPreview);
+
+      img.addEventListener("load", function () {
+        if (!img.naturalWidth) {
+          clearPreview();
+        } else {
+          img.classList.remove("d-none");
+          placeholder.classList.add("d-none");
+        }
+      });
+
+      setTimeout(updatePreview, 800);
+    });
+  </script>
+</body>
+</html>

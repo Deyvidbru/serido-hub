@@ -1,0 +1,257 @@
+
+<header class="serido-header shadow-sm">
+  <div class="container py-2 d-flex align-items-center gap-3">
+    <a href="index.html" class="d-flex align-items-center text-decoration-none">
+      <img
+        src="assets/logo.svg"
+        alt="Logo SeridóHub"
+        class="logo-header-img me-2"
+      />
+    </a>
+
+    <form
+      id="header-search-form"
+      class="flex-grow-1 d-none d-md-flex"
+      role="search"
+      action="busca.html"
+      method="get"
+    >
+      <div class="input-group search-input-group">
+        <button
+          class="btn btn-light border-0 border-end"
+          type="button"
+        >
+          Todos
+        </button>
+        <input
+          type="search"
+          class="form-control border-0"
+          placeholder="Buscar produtos, lojas e categorias..."
+          aria-label="Buscar"
+          name="q"
+          required
+        />
+        <button class="btn btn-primary" type="submit">
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </form>
+
+    <button
+      class="btn btn-light d-flex d-md-none align-items-center"
+      type="button"
+      data-bs-toggle="modal"
+      data-bs-target="#modalBusca"
+      id="header-search-mobile-button"
+    >
+      <i class="bi bi-search"></i>
+    </button>
+
+    <div class="d-flex align-items-center gap-3 ms-auto">
+      <a
+        href="login.html"
+        class="text-dark text-decoration-none small"
+        id="header-user-link"
+      >
+        <span class="header-round-icon">
+          <i class="bi bi-person"></i>
+        </span>
+
+        <span class="d-block" id="header-user-greeting">Olá, visitante</span>
+        <strong id="header-user-action">Entre ou cadastre-se</strong>
+      </a>
+
+      <a
+        href="minha_loja.html"
+        class="text-dark text-decoration-none small d-none"
+        id="header-seller-link"
+      >
+        <span class="header-round-icon">
+          <i class="bi bi-shop-window"></i>
+        </span>
+
+        <span class="d-block header-seller-label">Vendedor</span>
+        <strong>Minha loja</strong>
+      </a>
+
+      <a
+        href="meus_pedidos.html"
+        class="text-dark text-decoration-none d-none d-md-block small"
+        id="header-orders-link"
+      >
+        <span class="d-block">Devoluções</span>
+        <strong>e pedidos</strong>
+      </a>
+
+      <a
+        href="carrinho.html"
+        class="text-dark text-decoration-none position-relative serido-header-cart-link"
+      >
+        <i class="bi bi-cart3 fs-4"></i>
+        <span
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          id="cart-count-badge"
+        >
+          0
+        </span>
+      </a>
+
+      <a
+        href="#"
+        class="text-dark text-decoration-none d-none"
+        id="header-logout-link"
+      >
+        <span class="header-round-icon header-logout-icon">
+          <i class="bi bi-box-arrow-right"></i>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="border-top border-warning-subtle" id="header-secondary-nav">
+    <div
+      class="container d-flex flex-wrap align-items-center gap-3 py-1 small nav-secondary"
+    >
+      <button
+        class="btn btn-link text-dark text-decoration-none p-0 d-flex align-items-center"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#menuPrincipalOffcanvas"
+        aria-controls="menuPrincipalOffcanvas"
+        id="header-todos-button"
+      >
+        <i class="bi bi-list fs-5 me-1"></i>
+        Todos
+      </button>
+
+      <a href="lojas.html" class="text-dark text-decoration-none">
+        Lojas
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="offcanvas offcanvas-start serido-offcanvas"
+    tabindex="-1"
+    id="menuPrincipalOffcanvas"
+    aria-labelledby="menuPrincipalOffcanvasLabel"
+  >
+    <div class="offcanvas-header">
+      <div class="d-flex align-items-center gap-2">
+        <img
+          src="assets/logo.svg"
+          alt="Logo SeridóHub"
+          class="logo-header-img"
+          style="height: 32px;"
+        />
+        <h5 class="offcanvas-title mb-0" id="menuPrincipalOffcanvasLabel">
+          Navegar no SeridóHub
+        </h5>
+      </div>
+      <button
+        type="button"
+        class="btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+        aria-label="Fechar"
+      ></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+      <nav class="mb-3" aria-label="Menu principal">
+        <p class="text-uppercase small text-muted mb-2">Acesso rápido</p>
+        <div class="list-group serido-menu-list">
+          <a href="index.html" class="list-group-item serido-menu-item">
+            <i class="bi bi-house-door me-2"></i>
+            <span>Início</span>
+          </a>
+          <a href="lojas.html" class="list-group-item serido-menu-item">
+            <i class="bi bi-shop me-2"></i>
+            <span>Lojas</span>
+          </a>
+        </div>
+      </nav>
+
+      <nav class="mb-3" aria-label="Minha conta">
+        <p class="text-uppercase small text-muted mb-2">Minha conta</p>
+        <div class="list-group serido-menu-list">
+          <a href="meus_pedidos.html" class="list-group-item serido-menu-item">
+            <i class="bi bi-box-seam me-2"></i>
+            <span>Meus pedidos</span>
+          </a>
+          <a href="conta.html" class="list-group-item serido-menu-item">
+            <i class="bi bi-person-circle me-2"></i>
+            <span>Minha conta</span>
+          </a>
+          <a
+            href="minha_loja.html"
+            class="list-group-item serido-menu-item"
+            id="menu-item-minha-loja"
+          >
+            <i class="bi bi-shop-window me-2"></i>
+            <span>Painel do vendedor</span>
+          </a>
+          <a href="carrinho.html" class="list-group-item serido-menu-item">
+            <i class="bi bi-cart3 me-2"></i>
+            <span>Carrinho</span>
+          </a>
+        </div>
+      </nav>
+
+      <div class="mt-auto pt-3 border-top">
+        <button
+          type="button"
+          class="btn btn-outline-dark w-100 rounded-pill mb-2"
+          id="menu-btn-login-logout"
+        >
+          Entrar ou cadastrar-se
+        </button>
+        <small class="text-muted d-block text-center">
+          Logado como <span id="menu-user-label">visitante</span>
+        </small>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="modal fade"
+    id="modalBusca"
+    tabindex="-1"
+    aria-labelledby="modalBuscaLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title fs-6" id="modalBuscaLabel">Buscar</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Fechar"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form
+            id="header-search-form-mobile"
+            role="search"
+            action="busca.html"
+            method="get"
+          >
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control"
+                placeholder="Buscar produtos, lojas e categorias..."
+                name="q"
+                required
+              />
+              <button class="btn btn-primary" type="submit">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

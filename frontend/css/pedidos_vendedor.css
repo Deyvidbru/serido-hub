@@ -1,0 +1,121 @@
+.pedidos-page {
+    background: #f5f5f5;
+  }
+  
+  .pedidos-wrapper {
+    max-width: 1180px;
+  }
+    
+  .pedidos-filtro-card {
+    border-radius: 18px;
+    border: 0;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+  }
+  
+  .form-label-sm {
+    font-size: 0.8rem;
+    color: #6b7280;
+  }
+    
+  .pedidos-lista-card {
+    border-radius: 18px;
+    border: 0;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+  }
+  
+  .pedidos-tabela thead th {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #6b7280;
+    border-bottom-width: 1px;
+  }
+  
+  .pedidos-tabela tbody td {
+    font-size: 0.85rem;
+    vertical-align: middle;
+  }
+  
+  .pedido-codigo {
+    font-weight: 600;
+  }
+  
+  .pedido-data {
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+  
+  .pedido-cliente-nome {
+    font-weight: 500;
+  }
+  
+  .pedido-status-badge {
+    font-size: 0.7rem;
+    border-radius: 999px;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .pedido-status-badge.pendente {
+    background-color: #fef9c3;
+    color: #854d0e;
+  }
+  
+  .pedido-status-badge.em-preparo {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+  }
+  
+  .pedido-status-badge.saiu-para-entrega {
+    background-color: #cffafe;
+    color: #0369a1;
+  }
+  
+  .pedido-status-badge.entregue {
+    background-color: #dcfce7;
+    color: #166534;
+  }
+  
+  .pedido-status-badge.cancelado {
+    background-color: #fee2e2;
+    color: #b91c1c;
+  }
+    
+  .btn-ver-pedido {
+    font-size: 0.8rem;
+  }
+    
+  .modal-pedido .modal-content {
+    border-radius: 18px;
+  }
+  
+  .modal-pedido .modal-header {
+    border-bottom-color: #e5e7eb;
+  }
+  
+  .modal-pedido .modal-footer {
+    border-top-color: #e5e7eb;
+  }
+  
+  .modal-itens-wrapper {
+    max-height: 230px;
+    overflow-y: auto;
+  }
+  
+  .modal-itens-wrapper li + li {
+    border-top: 1px solid rgba(209, 213, 219, 0.7);
+    margin-top: 0.35rem;
+    padding-top: 0.35rem;
+  }
+    
+  @media (max-width: 767.98px) {
+    .pedidos-wrapper {
+      padding-inline: 0;
+    }
+  
+    .pedidos-filtro-card,
+    .pedidos-lista-card {
+      border-radius: 14px;
+    }
+  }
+  
